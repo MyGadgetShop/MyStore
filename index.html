@@ -2,90 +2,128 @@
 <html lang="ar">
   <head>
     <meta charset="UTF-8" />
-    <title>متجري</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>متجر إلكترونيات</title>
+
     <style>
-      body {
-        font-family: Arial;
+      * {
         margin: 0;
-        background: #f5f5f5;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+      }
+
+      body {
+        background: #f4f6f8;
       }
 
       header {
-        background: #111;
+        background: #0f172a;
         color: white;
-        padding: 15px;
+        padding: 20px;
         text-align: center;
+        font-size: 22px;
+        font-weight: bold;
       }
 
       .container {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-        gap: 20px;
         padding: 20px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 20px;
       }
 
       .card {
         background: white;
+        border-radius: 12px;
         padding: 15px;
-        border-radius: 10px;
         text-align: center;
-        transition: 0.3s;
+        transition: 0.2s;
+        border: 1px solid #eee;
       }
 
       .card:hover {
-        transform: scale(1.05);
+        transform: translateY(-3px);
       }
 
-      img {
+      .card img {
         width: 100%;
-        border-radius: 10px;
+        height: 200px;
+        object-fit: contain;
+        margin-bottom: 10px;
       }
 
-      h3 {
-        margin: 10px 0;
+      .card h3 {
+        font-size: 16px;
+        margin-bottom: 8px;
+      }
+
+      .price {
+        color: #e11d48;
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 10px;
       }
 
       button {
-        background: black;
-        color: white;
+        width: 100%;
+        padding: 12px;
         border: none;
-        padding: 10px;
+        background: #0f172a;
+        color: white;
+        border-radius: 8px;
+        font-size: 15px;
         cursor: pointer;
-        border-radius: 5px;
       }
 
       button:hover {
-        background: #444;
+        background: #1e293b;
+      }
+
+      /* 📱 للجوال */
+      @media (max-width: 600px) {
+        .container {
+          grid-template-columns: 1fr;
+        }
+
+        .card img {
+          height: 180px;
+        }
       }
     </style>
   </head>
 
   <body>
-    <header>
-      <h1>🛒 متجري</h1>
-    </header>
+    <header>📱 متجر الإلكترونيات</header>
 
     <div class="container">
       <div class="card">
-        <img src="https://via.placeholder.com/200" />
-        <h3>منتج 1</h3>
-        <p>100 ريال</p>
+        <img
+          src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9"
+        />
+        <h3>جوال ذكي</h3>
+        <div class="price">1200 ريال</div>
         <button>أضف للسلة</button>
       </div>
 
       <div class="card">
-        <img src="https://via.placeholder.com/200" />
-        <h3>منتج 2</h3>
-        <p>150 ريال</p>
+        <img
+          src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8"
+        />
+        <h3>لابتوب</h3>
+        <div class="price">3500 ريال</div>
         <button>أضف للسلة</button>
       </div>
 
       <div class="card">
-        <img src="https://via.placeholder.com/200" />
-        <h3>منتج 3</h3>
-        <p>200 ريال</p>
+        <img
+          src="https://images.unsplash.com/photo-1580894908361-967195033215"
+        />
+        <h3>سماعات</h3>
+        <div class="price">250 ريال</div>
         <button>أضف للسلة</button>
       </div>
     </div>
   </body>
 </html>
+شي
