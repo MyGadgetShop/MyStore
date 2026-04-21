@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gadget Shop</title>
 
-    <link rel="icon" href="Gadget Shop-logo-transparent.png" />
+    <link rel="icon" href="Gadget Shop-horizontal.png" />
 
     <style>
       * {
@@ -19,10 +19,11 @@
         color: white;
       }
 
-      /* 🔥 Container */
+      /* 🔥 Wrapper */
       .wrapper {
         max-width: 1200px;
-        margin: auto;
+        margin: 0 auto;
+        padding: 0 20px;
       }
 
       /* 🔝 NAVBAR */
@@ -30,8 +31,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 15px 30px;
-        background: #020617;
+        padding: 15px 0;
       }
 
       .left {
@@ -41,7 +41,7 @@
       }
 
       .logo-img {
-        height: 28px;
+        height: 50px;
       }
 
       .site-name {
@@ -75,7 +75,7 @@
       .categories {
         display: flex;
         gap: 10px;
-        padding: 10px 30px;
+        margin: 15px 0;
       }
 
       .categories button {
@@ -86,21 +86,16 @@
         color: white;
       }
 
-      .categories button:hover {
-        background: #22c55e;
-        color: black;
-      }
-
       /* 🔥 HERO */
       .hero {
-        height: 280px;
-        margin: 20px 30px;
+        height: 260px;
         border-radius: 20px;
         background: url("https://images.unsplash.com/photo-1519389950473-47ba0277781c")
           center/cover;
         position: relative;
         display: flex;
         align-items: center;
+        margin: 20px 0;
       }
 
       .hero::after {
@@ -118,8 +113,9 @@
       }
 
       .hero h1 {
-        font-size: 32px;
+        font-size: 30px;
       }
+
       .hero-btn {
         display: inline-block;
         margin-top: 10px;
@@ -132,10 +128,10 @@
 
       /* 🛍️ PRODUCTS */
       .container {
-        padding: 30px;
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         gap: 25px;
+        margin: 30px 0;
       }
 
       .card {
@@ -175,14 +171,15 @@
       /* 🔻 FOOTER */
       .footer {
         background: #020617;
-        padding: 40px 60px;
         margin-top: 40px;
+        padding: 40px 20px;
       }
 
       .footer-content {
         display: flex;
         justify-content: space-between;
-        gap: 40px;
+        gap: 30px;
+        flex-wrap: wrap;
       }
 
       .col {
@@ -213,7 +210,7 @@
       }
 
       .footer-logo img {
-        height: 50px;
+        height: 300px;
       }
 
       .footer-bottom {
@@ -222,14 +219,8 @@
         color: #777;
       }
 
-      /* 📱 RESPONSIVE */
-      @media (max-width: 1000px) {
-        .container {
-          grid-template-columns: repeat(2, 1fr);
-        }
-      }
-
-      @media (max-width: 600px) {
+      /* 📱 Responsive */
+      @media (max-width: 768px) {
         .navbar {
           flex-direction: column;
           gap: 10px;
@@ -247,86 +238,103 @@
           flex-direction: column;
         }
       }
+
+       .hoverr{
+
+               hover
+
+       }
     </style>
   </head>
 
   <body>
-    <div class="navbar wrapper">
-      <div class="left">
-        <img src="Gadget Shop-horizontal.png" class="logo-img" />
-        <span class="site-name">Gadget Shop</span>
+    <div class="wrapper">
+      <!-- 🔝 NAVBAR -->
+      <div class="navbar">
+        <div class="left">
+          <img src="Gadget Shop-logo-transparent.png" class="logo-img" />
+          <span class="site-name">Gadget Shop</span>
+        </div>
+
+        <div class="search-box">
+          <input type="text" placeholder="ابحث..." />
+          <button>بحث</button>
+        </div>
+
+        <div class="icons">❤️ 🛒</div>
       </div>
 
-      <div class="search-box">
-        <input type="text" placeholder="ابحث..." />
-        <button>بحث</button>
+      <!-- 📂 Categories -->
+      <div class="categories">
+        <button>جوالات</button>
+        <button>لابتوبات</button>
+        <button>سماعات</button>
       </div>
 
-      <div class="icons">❤️ 🛒</div>
+      <!-- 🔥 HERO -->
+      <div class="hero">
+        <div class="hero-content">
+          <h1>أحدث الإلكترونيات</h1>
+          <p>أفضل العروض على الشواحن السريعة</p>
+          <a href="#" class="hero-btn">تسوق الآن</a>
+        </div>
+      </div>
+
+      <!-- 🛍️ PRODUCTS -->
+      <div class="container">
+        <div class="card">
+          <img
+            src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9"
+          />
+          <h3>جوال</h3>
+          <div class="price">1200 ريال</div>
+          <a href="#" class="btn">عرض</a>
+        </div>
+
+        <div class="card">
+          <img
+            src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8"
+          />
+          <h3>لابتوب</h3>
+          <div class="price">3500 ريال</div>
+          <a href="products.html" class="btn">عرض</a>
+        </div>
+      </div>
     </div>
 
-    <div class="categories wrapper">
-      <button>جوالات</button>
-      <button>لابتوبات</button>
-      <button>سماعات</button>
-    </div>
-
-    <div class="hero wrapper">
-      <div class="hero-content">
-        <h1>أحدث الإلكترونيات</h1>
-        <p>أفضل العروض على الشواحن السريعة</p>
-        <a href="#" class="hero-btn">تسوق الآن</a>
-      </div>
-    </div>
-
-    <div class="container wrapper">
-      <div class="card">
-        <img
-          src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9"
-        />
-        <h3>جوال</h3>
-        <div class="price">1200 ريال</div>
-        <a href="#" class="btn">عرض</a>
-      </div>
-
-      <div class="card">
-        <img
-          src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8"
-        />
-        <h3>لابتوب</h3>
-        <div class="price">3500 ريال</div>
-        <a href="#" class="btn">عرض</a>
-      </div>
-    </div>
-
+    <!-- 🔻 FOOTER -->
     <footer class="footer">
-      <div class="footer-content">
-        <div class="col">
-          <h3>Gadget Shop</h3>
-          <p>متجر متخصص في الإلكترونيات الحديثة والشواحن السريعة.</p>
-        </div>
+      <div class="wrapper">
+        <div class="footer-content">
+          <div class="col">
+            <h3>Gadget Shop</h3>
+            <p>متجر متخصص في الإلكترونيات الحديثة والشواحن السريعة.</p>
+          </div>
 
-        <div class="col">
-          <h3>تواصل</h3>
-          <p>📱 05XXXXXXXX</p>
-          <p>📧 example@email.com</p>
-        </div>
+          <div class="col">
+            <h3>تواصل</h3>
+            <p>📱 05XXXXXXXX</p>
+            <p>📧 example@email.com</p>
+          </div>
 
-        <div class="col">
-          <h3>الدفع</h3>
-          <div class="pay-icons">
-            <img src="https://img.icons8.com/color/48/mada.png" />
-            <img src="https://img.icons8.com/color/48/visa.png" />
-            <img src="https://img.icons8.com/color/48/mastercard.png" />
+          <div class="col">
+            <h3>الدفع</h3>
+            <div class="pay-icons">
+              <img src="https://img.icons8.com/color/48/mada.png" />
+              <img src="https://img.icons8.com/color/48/visa.png" />
+              <img src="https://img.icons8.com/color/48/mastercard.png" />
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="footer-logo">
-        <img src="Gadget Shop-logo-transparent.png" />
-      </div>
+        <div class="footer-logo">
+          <img src="Gadget Shop-logo-transparent.png" />
+        </div>
 
-      <div class="footer-bottom">© 2026 Gadget Shop</div>
+        <div class="footer-bottom">© 2026 Gadget Shop</div>
+      </div>
     </footer>
+
+    <script></script>
   </body>
 </html>
