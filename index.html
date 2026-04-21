@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gadget Shop</title>
 
+    <link rel="icon" href="Gadget Shop-logo-transparent.png" />
+
     <style>
       * {
         margin: 0;
@@ -12,62 +14,68 @@
         box-sizing: border-box;
         font-family: sans-serif;
       }
-
       body {
         background: #0b0f19;
         color: white;
       }
 
-      /* 🧭 NAVBAR */
+      /* 🔥 Container */
+      .wrapper {
+        max-width: 1200px;
+        margin: auto;
+      }
+
+      /* 🔝 NAVBAR */
       .navbar {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 15px 20px;
+        padding: 15px 30px;
         background: #020617;
-        border-bottom: 1px solid #111;
       }
 
-      .logo {
+      .left {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .logo-img {
+        height: 28px;
+      }
+
+      .site-name {
         font-weight: bold;
-        font-size: 20px;
       }
 
       .search-box {
-        flex: 1;
-        margin: 0 20px;
         display: flex;
+        width: 300px;
       }
 
       .search-box input {
         flex: 1;
-        padding: 10px;
+        padding: 8px;
         border: none;
         border-radius: 8px 0 0 8px;
-        outline: none;
       }
 
       .search-box button {
-        padding: 10px 15px;
+        padding: 8px 12px;
         border: none;
         background: #22c55e;
-        color: black;
         border-radius: 0 8px 8px 0;
-        cursor: pointer;
       }
 
       .icons {
-        display: flex;
-        gap: 15px;
         font-size: 20px;
       }
 
-      /* 📂 أقسام */
+      /* 📂 Categories */
       .categories {
         display: flex;
         gap: 10px;
-        padding: 10px 20px;
-        background: #020617;
+        padding: 10px 30px;
       }
 
       .categories button {
@@ -76,7 +84,6 @@
         border-radius: 20px;
         background: #111827;
         color: white;
-        cursor: pointer;
       }
 
       .categories button:hover {
@@ -84,19 +91,57 @@
         color: black;
       }
 
-      /* 🛍️ المنتجات */
-      .container {
-        padding: 20px;
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-        gap: 20px;
+      /* 🔥 HERO */
+      .hero {
+        height: 280px;
+        margin: 20px 30px;
+        border-radius: 20px;
+        background: url("https://images.unsplash.com/photo-1519389950473-47ba0277781c")
+          center/cover;
+        position: relative;
+        display: flex;
+        align-items: center;
       }
 
-      /* 📦 كرت */
+      .hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.6);
+        border-radius: 20px;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 1;
+        padding: 30px;
+      }
+
+      .hero h1 {
+        font-size: 32px;
+      }
+      .hero-btn {
+        display: inline-block;
+        margin-top: 10px;
+        background: #22c55e;
+        padding: 10px 15px;
+        border-radius: 8px;
+        color: black;
+        text-decoration: none;
+      }
+
+      /* 🛍️ PRODUCTS */
+      .container {
+        padding: 30px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 25px;
+      }
+
       .card {
         background: #111827;
         border-radius: 12px;
-        padding: 15px;
+        padding: 20px;
         border: 1px solid #1f2937;
         transition: 0.2s;
       }
@@ -112,43 +157,78 @@
         object-fit: contain;
       }
 
-      .card h3 {
-        margin: 10px 0;
-        font-size: 16px;
-      }
-
-      /* ⭐ تقييم */
-      .rating {
-        color: #facc15;
-        font-size: 14px;
-        margin-bottom: 5px;
-      }
-
-      .reviews {
-        color: #9ca3af;
-        font-size: 12px;
-      }
-
-      /* 💰 السعر */
       .price {
         color: #22c55e;
-        font-weight: bold;
         margin: 10px 0;
       }
 
-      /* 🔘 زر */
       .btn {
         display: block;
         text-align: center;
         padding: 10px;
         background: #22c55e;
-        color: black;
         border-radius: 8px;
+        color: black;
         text-decoration: none;
-        font-weight: bold;
       }
 
-      /* 📱 */
+      /* 🔻 FOOTER */
+      .footer {
+        background: #020617;
+        padding: 40px 60px;
+        margin-top: 40px;
+      }
+
+      .footer-content {
+        display: flex;
+        justify-content: space-between;
+        gap: 40px;
+      }
+
+      .col {
+        max-width: 300px;
+      }
+
+      .col p {
+        color: #ccc;
+        margin: 5px 0;
+      }
+
+      .pay-icons {
+        display: flex;
+        gap: 10px;
+        margin-top: 10px;
+      }
+
+      .pay-icons img {
+        height: 30px;
+        background: white;
+        padding: 5px;
+        border-radius: 6px;
+      }
+
+      .footer-logo {
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      .footer-logo img {
+        height: 50px;
+      }
+
+      .footer-bottom {
+        text-align: center;
+        margin-top: 10px;
+        color: #777;
+      }
+
+      /* 📱 RESPONSIVE */
+      @media (max-width: 1000px) {
+        .container {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
       @media (max-width: 600px) {
         .navbar {
           flex-direction: column;
@@ -157,187 +237,56 @@
 
         .search-box {
           width: 100%;
-          margin: 0;
         }
 
-        .categories {
-          overflow-x: auto;
+        .container {
+          grid-template-columns: 1fr;
         }
-      }
 
-      .hero {
-        margin: 20px;
-        height: 250px;
-        border-radius: 15px;
-        background: url("https://images.unsplash.com/photo-1519389950473-47ba0277781c")
-          center/cover;
-        display: flex;
-        align-items: center;
-        padding: 20px;
-        position: relative;
-      }
-
-      /* طبقة غامقة فوق الصورة */
-      .hero::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: rgba(0, 0, 0, 0.5);
-        border-radius: 15px;
-      }
-
-      .hero-content {
-        position: relative;
-        z-index: 1;
-      }
-
-      .hero h1 {
-        font-size: 28px;
-        margin-bottom: 10px;
-      }
-
-      .hero p {
-        margin-bottom: 15px;
-        color: #ddd;
-      }
-
-      .hero-btn {
-        background: #22c55e;
-        color: black;
-        padding: 10px 15px;
-        border-radius: 8px;
-        text-decoration: none;
-        font-weight: bold;
-      }
-
-      .footer {
-        background: #020617;
-        padding: 30px 20px;
-        text-align: center;
-        margin-top: 40px;
-        border-top: 1px solid #111827;
-      }
-
-      .footer h3 {
-        margin-bottom: 15px;
-      }
-
-      .contact-list {
-        list-style: none;
-        margin-bottom: 15px;
-      }
-
-      .contact-list li {
-        margin: 8px 0;
-        color: #ccc;
-        position: relative;
-      }
-
-      /* النقاط تحت المعلومات */
-      .contact-list li::after {
-        content: "• • •";
-        display: block;
-        color: #22c55e;
-        font-size: 12px;
-        margin-top: 5px;
-      }
-
-      .footer-bottom {
-        font-size: 12px;
-        color: #888;
-      }
-
-      /* توزيع الفوتر */
-      .footer-content {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-      }
-
-      /* الواتساب */
-      .whatsapp {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-      }
-
-      .whatsapp img {
-        width: 18px;
-      }
-
-      /* الدفع */
-      .payments {
-        display: flex;
-        gap: 10px;
-        align-items: center;
-      }
-
-      .payments img {
-        height: 25px;
-        background: white;
-        padding: 3px;
-        border-radius: 5px;
-      }
-
-      /* موبايل */
-      @media (max-width: 600px) {
         .footer-content {
           flex-direction: column;
-          gap: 15px;
         }
-      }
-
-      .about {
-        max-width: 300px;
-        color: #ccc;
-        line-height: 1.6;
       }
     </style>
   </head>
 
   <body>
-    <!-- 🧭 NAVBAR -->
-    <div class="navbar">
-      <div class="logo">⚡ ElectroShop</div>
+    <div class="navbar wrapper">
+      <div class="left">
+        <img src="Gadget Shop-horizontal.png" class="logo-img" />
+        <span class="site-name">Gadget Shop</span>
+      </div>
 
       <div class="search-box">
-        <input type="text" placeholder="ابحث عن جوال، لابتوب..." />
+        <input type="text" placeholder="ابحث..." />
         <button>بحث</button>
       </div>
 
       <div class="icons">❤️ 🛒</div>
     </div>
 
-    <!-- 📂 CATEGORIES -->
-    <div class="categories">
+    <div class="categories wrapper">
       <button>جوالات</button>
       <button>لابتوبات</button>
       <button>سماعات</button>
-      <button>إكسسوارات</button>
     </div>
 
-    <div class="hero">
+    <div class="hero wrapper">
       <div class="hero-content">
         <h1>أحدث الإلكترونيات</h1>
-        <p>أفضل العروض على الجوالات واللابتوبات</p>
+        <p>أفضل العروض على الشواحن السريعة</p>
         <a href="#" class="hero-btn">تسوق الآن</a>
       </div>
     </div>
 
-    <!-- 🛍️ PRODUCTS -->
-    <div class="container">
+    <div class="container wrapper">
       <div class="card">
         <img
           src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9"
         />
-        <h3>جوال ذكي</h3>
-
-        <div class="rating">★★★★★</div>
-        <div class="reviews">(120 تقييم)</div>
-
+        <h3>جوال</h3>
         <div class="price">1200 ريال</div>
-        <a href="#" class="btn">عرض المنتج</a>
+        <a href="#" class="btn">عرض</a>
       </div>
 
       <div class="card">
@@ -345,56 +294,39 @@
           src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8"
         />
         <h3>لابتوب</h3>
-
-        <div class="rating">★★★★☆</div>
-        <div class="reviews">(80 تقييم)</div>
-
         <div class="price">3500 ريال</div>
-        <a href="#" class="btn">عرض المنتج</a>
+        <a href="#" class="btn">عرض</a>
       </div>
     </div>
+
     <footer class="footer">
       <div class="footer-content">
-        <!-- 🧠 عنّا -->
-        <div class="about">
-          <h3>من نحن</h3>
-          <p>
-            نحن متجر متخصص في توفير أحدث الأجهزة الإلكترونية، ونركز على تقديم
-            منتجات عالية الجودة مثل الشواحن السريعة والتقنيات الحديثة التي تضمن
-            لك أداءً موثوقًا وتجربة استخدام ممتازة.
-          </p>
+        <div class="col">
+          <h3>Gadget Shop</h3>
+          <p>متجر متخصص في الإلكترونيات الحديثة والشواحن السريعة.</p>
         </div>
 
-        <!-- 📞 تواصل -->
-        <div class="contact">
-          <h3>تواصل معنا</h3>
-
-          <ul class="contact-list">
-            <li class="whatsapp">
-              <img
-                src="https://cdn-icons-png.flaticon.com/512/733/733585.png"
-              />
-              05XXXXXXXX
-            </li>
-            <li>📧 example@email.com</li>
-          </ul>
+        <div class="col">
+          <h3>تواصل</h3>
+          <p>📱 05XXXXXXXX</p>
+          <p>📧 example@email.com</p>
         </div>
 
-        <!-- 💳 الدفع (صور ثابتة ما تخرب) -->
-        <div class="payments">
-          <img src="https://img.icons8.com/color/48/mada.png" />
-          <img src="https://img.icons8.com/color/48/visa.png" />
-          <img src="https://img.icons8.com/color/48/mastercard.png" />
-          <img src="https://img.icons8.com/ios-filled/50/mac-os.png" />
+        <div class="col">
+          <h3>الدفع</h3>
+          <div class="pay-icons">
+            <img src="https://img.icons8.com/color/48/mada.png" />
+            <img src="https://img.icons8.com/color/48/visa.png" />
+            <img src="https://img.icons8.com/color/48/mastercard.png" />
+          </div>
         </div>
       </div>
 
-      <!-- 🔻 لوقو تحت -->
       <div class="footer-logo">
         <img src="Gadget Shop-logo-transparent.png" />
       </div>
 
-      <div class="footer-bottom">© 2026 جميع الحقوق محفوظة</div>
+      <div class="footer-bottom">© 2026 Gadget Shop</div>
     </footer>
   </body>
 </html>
