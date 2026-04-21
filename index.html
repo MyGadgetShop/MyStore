@@ -173,6 +173,51 @@
           overflow-x: auto;
         }
       }
+
+      .hero {
+        margin: 20px;
+        height: 250px;
+        border-radius: 15px;
+        background: url("https://images.unsplash.com/photo-1519389950473-47ba0277781c")
+          center/cover;
+        display: flex;
+        align-items: center;
+        padding: 20px;
+        position: relative;
+      }
+
+      /* طبقة غامقة فوق الصورة */
+      .hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5);
+        border-radius: 15px;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 1;
+      }
+
+      .hero h1 {
+        font-size: 28px;
+        margin-bottom: 10px;
+      }
+
+      .hero p {
+        margin-bottom: 15px;
+        color: #ddd;
+      }
+
+      .hero-btn {
+        background: #22c55e;
+        color: black;
+        padding: 10px 15px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: bold;
+      }
     </style>
   </head>
 
@@ -195,6 +240,14 @@
       <button>لابتوبات</button>
       <button>سماعات</button>
       <button>إكسسوارات</button>
+    </div>
+
+    <div class="hero">
+      <div class="hero-content">
+        <h1>أحدث الإلكترونيات</h1>
+        <p>أفضل العروض على الجوالات واللابتوبات</p>
+        <a href="#" class="hero-btn">تسوق الآن</a>
+      </div>
     </div>
 
     <!-- 🛍️ PRODUCTS -->
