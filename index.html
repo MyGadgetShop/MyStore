@@ -14,146 +14,218 @@
       }
 
       body {
-        background: linear-gradient(135deg, #0f172a, #020617);
+        background: #0b0f19;
         color: white;
       }
 
-      header {
-        text-align: center;
-        padding: 25px;
-        font-size: 24px;
+      /* 🧭 NAVBAR */
+      .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px 20px;
+        background: #020617;
+        border-bottom: 1px solid #111;
+      }
+
+      .logo {
         font-weight: bold;
+        font-size: 20px;
       }
 
-      .container {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-        gap: 25px;
-        padding: 20px;
+      .search-box {
+        flex: 1;
+        margin: 0 20px;
+        display: flex;
       }
 
-      /* 🔥 الكرت */
-      .card {
-        perspective: 1000px;
+      .search-box input {
+        flex: 1;
+        padding: 10px;
+        border: none;
+        border-radius: 8px 0 0 8px;
+        outline: none;
       }
 
-      .card-inner {
-        position: relative;
-        width: 100%;
-        height: 350px;
-        transition: transform 0.7s;
-        transform-style: preserve-3d;
+      .search-box button {
+        padding: 10px 15px;
+        border: none;
+        background: #22c55e;
+        color: black;
+        border-radius: 0 8px 8px 0;
+        cursor: pointer;
       }
 
-      .card:hover .card-inner {
-        transform: rotateY(180deg);
+      .icons {
+        display: flex;
+        gap: 15px;
+        font-size: 20px;
       }
 
-      /* الوجهين */
-      .card-front,
-      .card-back {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        border-radius: 15px;
-        backface-visibility: hidden;
-        overflow: hidden;
+      /* 📂 أقسام */
+      .categories {
+        display: flex;
+        gap: 10px;
+        padding: 10px 20px;
+        background: #020617;
       }
 
-      /* الأمام */
-      .card-front {
+      .categories button {
+        padding: 8px 15px;
+        border: none;
+        border-radius: 20px;
         background: #111827;
-        padding: 15px;
-        text-align: center;
-        border: 1px solid #1f2937;
+        color: white;
+        cursor: pointer;
       }
 
-      .card-front img {
+      .categories button:hover {
+        background: #22c55e;
+        color: black;
+      }
+
+      /* 🛍️ المنتجات */
+      .container {
+        padding: 20px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+      }
+
+      /* 📦 كرت */
+      .card {
+        background: #111827;
+        border-radius: 12px;
+        padding: 15px;
+        border: 1px solid #1f2937;
+        transition: 0.2s;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+        border-color: #22c55e;
+      }
+
+      .card img {
         width: 100%;
         height: 200px;
         object-fit: contain;
       }
 
-      .card-front h3 {
-        margin-top: 10px;
+      .card h3 {
+        margin: 10px 0;
+        font-size: 16px;
       }
 
-      /* الخلف */
-      .card-back {
-        background: #1e293b;
-        transform: rotateY(180deg);
-        padding: 20px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 15px;
+      /* ⭐ تقييم */
+      .rating {
+        color: #facc15;
+        font-size: 14px;
+        margin-bottom: 5px;
       }
 
+      .reviews {
+        color: #9ca3af;
+        font-size: 12px;
+      }
+
+      /* 💰 السعر */
       .price {
         color: #22c55e;
-        font-size: 20px;
         font-weight: bold;
+        margin: 10px 0;
       }
 
-      button {
-        padding: 12px 20px;
-        border: none;
+      /* 🔘 زر */
+      .btn {
+        display: block;
+        text-align: center;
+        padding: 10px;
         background: #22c55e;
         color: black;
         border-radius: 8px;
-        cursor: pointer;
+        text-decoration: none;
         font-weight: bold;
       }
 
-      button:hover {
-        background: #16a34a;
+      /* 🔻 footer */
+      footer {
+        margin-top: 30px;
+        padding: 20px;
+        text-align: center;
+        background: #020617;
+        color: #aaa;
       }
 
-      /* 📱 موبايل */
+      /* 📱 */
       @media (max-width: 600px) {
-        .card-inner {
-          height: 300px;
+        .navbar {
+          flex-direction: column;
+          gap: 10px;
+        }
+
+        .search-box {
+          width: 100%;
+          margin: 0;
+        }
+
+        .categories {
+          overflow-x: auto;
         }
       }
     </style>
   </head>
 
   <body>
-    <header>⚡ متجر إلكترونيات احترافي</header>
+    <!-- 🧭 NAVBAR -->
+    <div class="navbar">
+      <div class="logo">⚡ ElectroShop</div>
 
+      <div class="search-box">
+        <input type="text" placeholder="ابحث عن جوال، لابتوب..." />
+        <button>بحث</button>
+      </div>
+
+      <div class="icons">❤️ 🛒</div>
+    </div>
+
+    <!-- 📂 CATEGORIES -->
+    <div class="categories">
+      <button>جوالات</button>
+      <button>لابتوبات</button>
+      <button>سماعات</button>
+      <button>إكسسوارات</button>
+    </div>
+
+    <!-- 🛍️ PRODUCTS -->
     <div class="container">
       <div class="card">
-        <div class="card-inner">
-          <div class="card-front">
-            <img
-              src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9"
-            />
-            <h3>جوال ذكي</h3>
-          </div>
+        <img
+          src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9"
+        />
+        <h3>جوال ذكي</h3>
 
-          <div class="card-back">
-            <div class="price">1200 ريال</div>
-            <button>أضف للسلة</button>
-          </div>
-        </div>
+        <div class="rating">★★★★★</div>
+        <div class="reviews">(120 تقييم)</div>
+
+        <div class="price">1200 ريال</div>
+        <a href="#" class="btn">عرض المنتج</a>
       </div>
 
       <div class="card">
-        <div class="card-inner">
-          <div class="card-front">
-            <img
-              src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8"
-            />
-            <h3>لابتوب</h3>
-          </div>
+        <img
+          src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8"
+        />
+        <h3>لابتوب</h3>
 
-          <div class="card-back">
-            <div class="price">3500 ريال</div>
-            <button>أضف للسلة</button>
-          </div>
-        </div>
+        <div class="rating">★★★★☆</div>
+        <div class="reviews">(80 تقييم)</div>
+
+        <div class="price">3500 ريال</div>
+        <a href="#" class="btn">عرض المنتج</a>
       </div>
     </div>
+
+    <footer>© 2026 متجر إلكترونيات</footer>
   </body>
 </html>
