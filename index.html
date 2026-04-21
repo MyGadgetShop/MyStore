@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>متجر إلكترونيات</title>
+    <title>Gadget Shop</title>
 
     <style>
       * {
@@ -148,15 +148,6 @@
         font-weight: bold;
       }
 
-      /* 🔻 footer */
-      footer {
-        margin-top: 30px;
-        padding: 20px;
-        text-align: center;
-        background: #020617;
-        color: #aaa;
-      }
-
       /* 📱 */
       @media (max-width: 600px) {
         .navbar {
@@ -219,7 +210,7 @@
         font-weight: bold;
       }
 
-      footer {
+      .footer {
         background: #020617;
         padding: 30px 20px;
         text-align: center;
@@ -296,6 +287,12 @@
           gap: 15px;
         }
       }
+
+      .about {
+        max-width: 300px;
+        color: #ccc;
+        line-height: 1.6;
+      }
     </style>
   </head>
 
@@ -358,7 +355,17 @@
     </div>
     <footer class="footer">
       <div class="footer-content">
-        <!-- 📞 التواصل -->
+        <!-- 🧠 عنّا -->
+        <div class="about">
+          <h3>من نحن</h3>
+          <p>
+            نحن متجر متخصص في توفير أحدث الأجهزة الإلكترونية، ونركز على تقديم
+            منتجات عالية الجودة مثل الشواحن السريعة والتقنيات الحديثة التي تضمن
+            لك أداءً موثوقًا وتجربة استخدام ممتازة.
+          </p>
+        </div>
+
+        <!-- 📞 تواصل -->
         <div class="contact">
           <h3>تواصل معنا</h3>
 
@@ -369,26 +376,22 @@
               />
               05XXXXXXXX
             </li>
-
             <li>📧 example@email.com</li>
           </ul>
         </div>
 
-        <!-- 💳 الدفع -->
+        <!-- 💳 الدفع (صور ثابتة ما تخرب) -->
         <div class="payments">
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mada_Logo.svg"
-          />
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg"
-          />
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg"
-          />
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
-          />
+          <img src="https://img.icons8.com/color/48/mada.png" />
+          <img src="https://img.icons8.com/color/48/visa.png" />
+          <img src="https://img.icons8.com/color/48/mastercard.png" />
+          <img src="https://img.icons8.com/ios-filled/50/mac-os.png" />
         </div>
+      </div>
+
+      <!-- 🔻 لوقو تحت -->
+      <div class="footer-logo">
+        <img src="Gadget Shop-logo-transparent.png" />
       </div>
 
       <div class="footer-bottom">© 2026 جميع الحقوق محفوظة</div>
