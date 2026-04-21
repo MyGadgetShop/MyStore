@@ -255,6 +255,47 @@
         font-size: 12px;
         color: #888;
       }
+
+      /* توزيع الفوتر */
+      .footer-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      /* الواتساب */
+      .whatsapp {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .whatsapp img {
+        width: 18px;
+      }
+
+      /* الدفع */
+      .payments {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+      }
+
+      .payments img {
+        height: 25px;
+        background: white;
+        padding: 3px;
+        border-radius: 5px;
+      }
+
+      /* موبايل */
+      @media (max-width: 600px) {
+        .footer-content {
+          flex-direction: column;
+          gap: 15px;
+        }
+      }
     </style>
   </head>
 
@@ -316,12 +357,39 @@
       </div>
     </div>
     <footer class="footer">
-      <h3>تواصل معنا</h3>
+      <div class="footer-content">
+        <!-- 📞 التواصل -->
+        <div class="contact">
+          <h3>تواصل معنا</h3>
 
-      <ul class="contact-list">
-        <li>📱 05XXXXXXXX</li>
-        <li>📧 example@email.com</li>
-      </ul>
+          <ul class="contact-list">
+            <li class="whatsapp">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/733/733585.png"
+              />
+              05XXXXXXXX
+            </li>
+
+            <li>📧 example@email.com</li>
+          </ul>
+        </div>
+
+        <!-- 💳 الدفع -->
+        <div class="payments">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mada_Logo.svg"
+          />
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg"
+          />
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg"
+          />
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
+          />
+        </div>
+      </div>
 
       <div class="footer-bottom">© 2026 جميع الحقوق محفوظة</div>
     </footer>
