@@ -20,11 +20,17 @@
       }
 
       /* 🔥 Wrapper */
-      .wrapper {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
-      }
+    .wrapper {
+  max-width: 100%;
+  padding: 0 40px;
+
+
+
+  
+}
+
+
+
 
       /* 🔝 NAVBAR */
       .navbar {
@@ -41,7 +47,7 @@
       }
 
       .logo-img {
-        height: 50px;
+        height:200px;
       }
 
       .site-name {
@@ -68,8 +74,9 @@
       }
 
       .icons {
-        font-size: 20px;
-      }
+  font-size: 26px; /* كبر السلة */
+  position: relative;
+}
 
       /* 📂 Categories */
       .categories {
@@ -96,6 +103,7 @@
         display: flex;
         align-items: center;
         margin: 20px 0;
+        width: 100%;
       }
 
       .hero::after {
@@ -128,10 +136,9 @@
 
       /* 🛍️ PRODUCTS */
       .container {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 25px;
-        margin: 30px 0;
+         display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
       }
 
       .card {
@@ -179,7 +186,6 @@
         display: flex;
         justify-content: space-between;
         gap: 30px;
-        flex-wrap: wrap;
       }
 
       .col {
@@ -207,10 +213,13 @@
       .footer-logo {
         text-align: center;
         margin-top: 20px;
+        height:100px;
       }
 
       .footer-logo img {
-        height: 300px;
+        height: 300px;   /* كبرناه */
+  max-width: 250px;
+
       }
 
       .footer-bottom {
@@ -237,13 +246,207 @@
         .footer-content {
           flex-direction: column;
         }
+
+        .buttons {
+          display: flex;
+          gap: 10px; /* المسافة بين الأزرار */
+          margin-top: 20px;
+          
+        }
       }
 
-       .hoverr{
+.btn:focus,
+.btn:hover {
+  box-shadow: 0 0 10px #22c55e;
+  transform: scale(1.03);
+  transition: 0.2s;
+}
+        .btn {
+          padding: 10px 20px;
+          border: none;
+          border-radius: 8px;
+          font-weight: bold;
+          cursor: pointer;
+        }
 
-               hover
+        /* زر الشراء */
+        .buy {
+          background: #22c55e;
+          color: black;
+        }
 
-       }
+        /* زر السلة */
+        .cart {
+          background: #1f2937;
+          color: white;
+        }
+
+            
+
+
+
+
+
+        .toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+
+  background: #111827;
+  color: white;
+
+  padding: 12px 20px;
+  border-radius: 8px;
+
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+
+  opacity: 0;
+  transform: translateY(-20px);
+
+  transition: 0.3s;
+}
+
+/* لما يظهر */
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+   
+
+
+
+
+
+
+
+
+
+/* 💻 تكبير الكمبيوتر */
+@media (min-width: 1200px){
+
+  .hero {
+    height: 380px;
+  }
+
+  .hero h1 {
+    font-size: 42px;
+  }
+
+  .search-box {
+    width:600px;
+  }
+
+  .container {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+  }
+
+  .card {
+    padding: 30px;
+  }
+
+  .card img {
+    height: 250px;
+  }
+
+  .btn {
+    padding: 14px;
+    font-size: 16px;
+  }
+
+
+  .search-box input {
+    padding: 12px;
+    font-size: 16px;
+  }
+
+  .search-box button {
+    padding: 12px 20px;
+  }
+
+
+  
+
+}
+
+
+
+.cart-box {
+  position: relative;
+  display: inline-block;
+}
+
+/* رقم السلة */
+.count {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+
+  background: red;
+  color: white;
+
+  font-size: 11px;
+  padding: 3px 6px;
+  border-radius: 50%;
+
+  min-width: 18px;
+  text-align: center;
+}
+
+
+
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+
+  width: 55px;
+  height: 55px;
+
+  background: #25D366;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 0 12px rgba(0,0,0,0.4);
+
+  z-index: 999;
+}
+
+.whatsapp img {
+  width: 28px;
+}
+
+/* حركة */
+.whatsapp:hover {
+  transform: scale(1.1);
+  transition: 0.2s;
+}
+
+
+.nav-icons {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.user-icon {
+  font-size: 26px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.user-icon:hover {
+  color: #22c55e;
+  transform: scale(1.1);
+}
+
+
+
     </style>
   </head>
 
@@ -253,15 +456,27 @@
       <div class="navbar">
         <div class="left">
           <img src="Gadget Shop-logo-transparent.png" class="logo-img" />
-          <span class="site-name">Gadget Shop</span>
+          <span class="site-name"></span>
         </div>
 
         <div class="search-box">
           <input type="text" placeholder="ابحث..." />
           <button>بحث</button>
         </div>
+<div class="nav-icons">
 
-        <div class="icons">❤️ 🛒</div>
+  <!-- 👤 المستخدم -->
+  <div class="user-icon">👤</div>
+
+  <!-- 🛒 السلة -->
+  <a href="Cart.html">
+    <div class="icons">
+      🛒
+      <span  id="CartCount" class="count"></span>
+    </div>
+  </a>
+
+</div>
       </div>
 
       <!-- 📂 Categories -->
@@ -283,9 +498,11 @@
       <!-- 🛍️ PRODUCTS -->
       <div class="container">
         <div class="card">
-          <img
-            src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9"
-          />
+          <a href="prodcets.html">
+            <img
+              src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9"
+            />
+          </a>
           <h3>جوال</h3>
           <div class="price">1200 ريال</div>
           <a href="#" class="btn">عرض</a>
@@ -297,10 +514,23 @@
           />
           <h3>لابتوب</h3>
           <div class="price">3500 ريال</div>
-          <a href="products.html" class="btn">عرض</a>
-        </div>
+          
+
+<div class="buttons">
+  <button  id = "Btnbuy"  class="btn buy">شراء الآن</button>
+  <button   id = "BtnCart"  class="btn cart">أضف إلى السلة</button>
+</div>
+
+
+      
       </div>
+
+
     </div>
+
+    <div class="toast" id="toast">
+  تمت إضافة المنتج إلى السلة 🛒
+</div>
 
     <!-- 🔻 FOOTER -->
     <footer class="footer">
@@ -315,6 +545,9 @@
             <h3>تواصل</h3>
             <p>📱 05XXXXXXXX</p>
             <p>📧 example@email.com</p>
+
+
+            
           </div>
 
           <div class="col">
@@ -323,18 +556,71 @@
               <img src="https://img.icons8.com/color/48/mada.png" />
               <img src="https://img.icons8.com/color/48/visa.png" />
               <img src="https://img.icons8.com/color/48/mastercard.png" />
+              
             </div>
           </div>
         </div>
 
-        <div class="footer-logo">
-          <img src="Gadget Shop-logo-transparent.png" />
-        </div>
+       
 
         <div class="footer-bottom">© 2026 Gadget Shop</div>
       </div>
     </footer>
 
-    <script></script>
+
+
+<a href="https://wa.me/966XXXXXXXXX" target="_blank" class="whatsapp">
+  <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp.png"/>
+</a>
+
+    <script>
+
+  const  BtnCart =      document.getElementById("BtnCart");
+  const  CartCount =      document.getElementById("CartCount");
+
+
+function showToast() {
+  const toast = document.getElementById("toast");
+
+  toast.classList.add("show");
+
+  setTimeout(() => {
+    toast.classList.remove("show");
+  }, 2000);
+}
+ let   Count   = 0;
+function countCart(){
+
+  CartCount.textContent = cart.length;
+
+
+}
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+BtnCart.addEventListener("click", () => {
+  showToast();
+
+
+  let product = {
+     id: Date.now(),
+    title: "جوال"
+  };
+
+  cart.push(product);
+
+  localStorage.setItem("cart", JSON.stringify(cart));
+
+countCart();
+
+
+
+
+
+
+});
+
+
+      
+    </script>
   </body>
 </html>

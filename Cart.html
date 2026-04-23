@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>السلة</title>
+
+    <style>
+      body {
+        margin: 0;
+        font-family: sans-serif;
+        background: #0b0f19;
+        color: white;
+      }
+
+      /* 🔥 ضبط العرض */
+      .wrapper {
+        max-width: 1300px;
+        margin: auto;
+        padding: 20px;
+      }
+
+      /* 🔝 NAV */
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        height: 90px;
+      }
+
+      /* 🔍 search */
+      .search {
+        display: flex;
+        width: 500px;
+        background: #111827;
+        border-radius: 50px;
+        overflow: hidden;
+      }
+
+      .search input {
+        flex: 1;
+        padding: 12px;
+        border: none;
+        background: transparent;
+        color: white;
+      }
+
+      .search button {
+        background: #22c55e;
+        border: none;
+        padding: 12px 25px;
+        cursor: pointer;
+      }
+
+      /* 🛒 layout */
+      .cart-container {
+        margin-top: 30px;
+        display: flex;
+        gap: 30px;
+      }
+
+      /* 📦 المنتجات */
+      .items {
+        flex: 3;
+      }
+
+      /* 🧾 الكارد */
+      .item {
+        background: #111827;
+        padding: 20px;
+        border-radius: 12px;
+        margin-bottom: 15px;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      /* 📊 side */
+      .side {
+        flex: 1.2;
+      }
+
+      /* 💰 summary */
+      .summary {
+        background: #111827;
+        padding: 20px;
+        border-radius: 12px;
+      }
+
+      .summary div {
+        display: flex;
+        justify-content: space-between;
+        margin: 8px 0;
+      }
+
+      .total {
+        font-size: 20px;
+        color: #22c55e;
+      }
+
+      /* 🔘 button */
+      .btn {
+        margin-top: 15px;
+        width: 100%;
+        padding: 12px;
+        border: none;
+        background: #22c55e;
+        color: black;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+
+      /* 🔻 FOOTER */
+      .footer {
+        background: #020617;
+        margin-top: 60px;
+        padding: 40px;
+        text-align: center;
+      }
+
+      .footer img {
+        height: 120px;
+        margin-bottom: 10px;
+      }
+
+      .pay img {
+        height: 40px;
+        margin: 5px;
+        background: white;
+        padding: 5px;
+        border-radius: 6px;
+      }
+
+      /* 📱 MOBILE */
+      @media (max-width: 768px) {
+        .search {
+          width: 100%;
+        }
+
+        .cart-container {
+          flex-direction: column;
+        }
+
+        .item {
+          flex-direction: column;
+          gap: 10px;
+        }
+
+        .logo {
+          height: 70px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <!-- 🔝 NAVBAR -->
+      <div class="navbar">
+        <img src="Gadget Shop-logo-transparent.png" class="logo" />
+
+        <div class="search">
+          <input type="text" placeholder="ابحث..." />
+          <button>بحث</button>
+        </div>
+
+        <div>🛒</div>
+      </div>
+
+      <!-- 🛒 CART -->
+      <div class="cart-container">
+        <div class="items" id="cartItems"></div>
+
+        <div class="side">
+          <div class="summary">
+            <h3>ملخص الطلب</h3>
+
+            <div>
+              <span>الإجمالي</span>
+              <span id="total">0 ريال</span>
+            </div>
+
+            <button id="ConfirmeOrder" class="btn">إتمام الطلب</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🔻 FOOTER -->
+    <div class="footer">
+      <img src="Gadget Shop-logo-transparent.png" />
+      <p>متجر متخصص في الإلكترونيات الحديثة والشواحن السريعة.</p>
+
+      <div class="pay">
+        <img src="https://img.icons8.com/color/48/mada.png" />
+        <img src="https://img.icons8.com/color/48/visa.png" />
+        <img src="https://img.icons8.com/color/48/mastercard.png" />
+      </div>
+    </div>
+
+    <script>
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+      async function send() {
+        const res = await fetch("http://localhost:5215/api/Students", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name: "Ali",
+            age: 20,
+            grade: 90,
+          }),
+        });
+
+        const data = await res.json();
+        console.log(data);
+      }
+
+      let container = document.getElementById("cartItems");
+      let totalDiv = document.getElementById("total");
+      let ConfirmeOrder = document.getElementById("ConfirmeOrder");
+
+      function showCart() {
+        container.innerHTML = "";
+
+        let total = 0;
+
+        cart.forEach((item) => {
+          let price = Number(item.price) || 0; // حل undefined
+
+          total += price;
+
+          container.innerHTML += `
+      <div class="item">
+        <h3>${item.title}</h3>
+        <p>${price} ريال</p>
+      </div>
+    `;
+        });
+
+        totalDiv.textContent = total + " ريال";
+      }
+
+      showCart();
+
+      ConfirmeOrder.addEventListener("click", () => {
+        send();
+      });
+    </script>
+  </body>
+</html>

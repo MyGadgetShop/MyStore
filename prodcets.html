@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>تفاصيل المنتج</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+      }
+      body {
+        background: #0b0f19;
+        color: white;
+      }
+
+      .wrapper {
+        max-width: 1100px;
+        margin: auto;
+        padding: 20px;
+      }
+
+      /* 🔝 رجوع */
+      .back {
+        margin-bottom: 20px;
+      }
+
+      .back a {
+        color: #22c55e;
+        text-decoration: none;
+      }
+
+      /* 🛍️ المنتج */
+      .product {
+        display: flex;
+        gap: 40px;
+        background: #111827;
+        padding: 30px;
+        border-radius: 15px;
+      }
+
+      /* الصورة */
+      .product img {
+        width: 400px;
+        border-radius: 10px;
+      }
+
+      /* التفاصيل */
+      .details {
+        flex: 1;
+      }
+
+      .details h1 {
+        margin-bottom: 10px;
+      }
+
+      .price {
+        color: #22c55e;
+        font-size: 22px;
+        margin: 10px 0;
+      }
+
+      .desc {
+        color: #ccc;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+
+      /* أزرار */
+      .buttons {
+        display: flex;
+        gap: 10px;
+      }
+
+      .btn {
+        padding: 12px 20px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      .buy {
+        background: #22c55e;
+        color: black;
+      }
+
+      .cart {
+        background: #1f2937;
+        color: white;
+      }
+
+      /* 📱 */
+      @media (max-width: 768px) {
+        .product {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .product img {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <!-- 🔙 رجوع -->
+      <div class="back">
+        <a href="index.html">← رجوع</a>
+      </div>
+
+      <!-- 🛍️ المنتج -->
+      <div class="product">
+        <img
+          src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8"
+        />
+
+        <div class="details">
+          <h1>لابتوب احترافي</h1>
+
+          <div class="price">3500 ريال</div>
+
+          <p class="desc">
+            لابتوب قوي مناسب للأعمال والألعاب، يتميز بسرعة عالية ومعالج حديث
+            يضمن أداء ممتاز في جميع الاستخدامات.
+          </p>
+
+          <div class="buttons">
+            <a href="#" class="btn buy">شراء الآن</a>
+            <a href="#" class="btn cart">أضف للسلة</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
